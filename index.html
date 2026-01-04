@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Feed Bootstrap</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    rel="stylesheet"
+  >
+
+  <!-- ====== ESTILOS PERSONALIZADOS ====== -->
+  <style>
+    /* ===== GRID 1 COLUMNA ===== */
+
+    /* La card se ajusta al ancho de la imagen */
+    #listView .card {
+      width: fit-content;
+      margin: 0 auto 2rem;
+    }
+
+    /* Tamaño horizontal de la imagen */
+    #listView .card-img-top {
+      width: 400px;      /* controla el ancho real */
+      height: auto;
+      display: block;
+    }
+
+    /* Header y body del mismo ancho que la imagen */
+    #listView .card-header,
+    #listView .card-body {
+      width: 400px;
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-light bg-white shadow-sm px-4">
+  <span class="navbar-brand fw-bold">
+    <i class="bi bi-instagram"></i> Instagram
+  </span>
+
+  <div class="d-flex gap-2">
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#postModal">
+      Create a new post
+    </button>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+        <i class="bi bi-gear-fill"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= BOTONES GRID ================= -->
+<div class="container text-center my-4">
+  <div class="btn-group">
+    <button class="btn btn-outline-dark" onclick="showGrid()">
+      <i class="bi bi-grid-3x3-gap-fill"></i>
+    </button>
+    <button class="btn btn-outline-dark" onclick="showList()">
+      <i class="bi bi-square-fill"></i>
+    </button>
+  </div>
+</div>
+
+<!-- ================= GRID 3 COLUMNAS ================= -->
+<div id="gridView" class="container">
+  <div class="row g-3">
+
+    <div class="col-12 col-md-4">
+      <img src="https://picsum.photos/600/600?1" class="img-fluid">
+    </div>
+
+    <div class="col-12 col-md-4">
+      <img src="https://picsum.photos/600/600?2" class="img-fluid">
+    </div>
+
+    <div class="col-12 col-md-4">
+      <img src="https://picsum.photos/600/600?3" class="img-fluid">
+    </div>
+
+    <div class="col-12 col-md-4">
+      <img src="https://picsum.photos/600/600?4" class="img-fluid">
+    </div>
+
+    <div class="col-12 col-md-4">
+      <img src="https://picsum.photos/600/600?5" class="img-fluid">
+    </div>
+
+    <div class="col-12 col-md-4">
+      <img src="https://picsum.photos/600/600?6" class="img-fluid">
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= GRID 1 COLUMNA ================= -->
+<div id="listView" class="container d-none">
+
+  <div class="card mb-4">
+    <div class="card-header fw-bold">mi perro feliz</div>
+    <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6" class="card-img-top">
+    <div class="card-body">
+      <p class="fw-bold">❤️ 100 likes</p>
+      <p>This is my first photo of the feed. This is a multi-line comment for testing purposes.</p>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header fw-bold">la playa donde siempre voy</div>
+    <img src="https://images.unsplash.com/photo-1644027620178-83cf81e8ece4" class="card-img-top">
+    <div class="card-body">
+      <p class="fw-bold">❤️ 87 likes</p>
+      <p>Another beautiful image from the feed.</p>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header fw-bold">empezando el futbol</div>
+    <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55" class="card-img-top">
+    <div class="card-body">
+      <p class="fw-bold">❤️ 486 likes</p>
+      <p>beautiful image from the feed.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ================= MODAL ================= -->
+<div class="modal fade" id="postModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Create a new post</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <textarea class="form-control" placeholder="Write a caption..."></textarea>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button class="btn btn-success">Publish</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================= JS ================= -->
+<script>
+  function showGrid() {
+    document.getElementById("listView").classList.add("d-none");
+    document.getElementById("gridView").classList.remove("d-none");
+  }
+
+  function showList() {
+    document.getElementById("gridView").classList.add("d-none");
+    document.getElementById("listView").classList.remove("d-none");
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
