@@ -11,12 +11,12 @@
     body { background-color: #fafafa; }
     .navbar { background-color: white; border-bottom: 1px solid #ddd; }
     
-    /* Estilo de los Tabs */
+    
     .nav-tabs { border: none; }
     .nav-tabs .nav-link { border: none; color: #a8a8a8; font-size: 1.5rem; }
     .nav-tabs .nav-link.active { color: #0095f6; background: none; }
 
-    /* Vista Grid 3x3 */
+   
     .grid-img {
       width: 100%;
       height: 250px;
@@ -38,8 +38,8 @@
     .post-footer { padding: 10px 15px; }
 
     /* Ajuste para móviles */
-    @media (max-width: 576px) {
-      .grid-img { height: 120px; }
+    @media (max-width: 768px) {
+      .grid-img { height: 350px; }
     }
   </style>
 </head>
@@ -94,7 +94,7 @@
   <div class="tab-content mt-3">
     
     <div class="tab-pane fade show active container" id="grid-pane">
-      <div class="row row-cols-3 g-2">
+      <div class="row row-cols-1 row-cols-md-3 g-2">
         <div class="col"><img src="https://picsum.photos/400/400?random=1" class="grid-img"></div>
         <div class="col"><img src="https://picsum.photos/400/400?random=2" class="grid-img"></div>
         <div class="col"><img src="https://picsum.photos/400/400?random=3" class="grid-img"></div>
